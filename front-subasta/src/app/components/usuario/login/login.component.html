@@ -1,0 +1,36 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><i class="fas fa-lock"></i></li>
+    </ol>
+</nav>
+
+<div class="row">
+    <div class="col">
+    </div>
+    <div class="col-sm-4">
+        <div class="card bg-info text-white mt-5">
+            <div class="card-header">
+                <i class="fas fa-key"></i> Iniciar session
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input [(ngModel)]="usuario.username" type="text" class="form-control form-control-sm" id="username" name="username" autofocus required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input [(ngModel)]="usuario.password" type="password" name="password" class="form-control form-control-sm" id="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <button (click)='login()' type="submit" class="btn btn-lg btn-block btn-primary"> <i class="fas fa-unlock-alt"></i> Login</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>

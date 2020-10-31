@@ -1,0 +1,43 @@
+<div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-6">
+
+        <div class="card">
+            <div class="card-header">
+                Formulario registro de subasta
+            </div>
+            <div class="card-body">
+
+                <form (ngSubmit)="store(subastaForm)" #subastaForm="ngForm">
+                    <div class="input-group mb-3">
+                        <select class="form-control " [(ngModel)]="subasta.fechaSubasta" name="fecha" required #fech="ngModel" [ngClass]="{ 'is-invalid': fech.invalid,'is-valid': fech.valid}">
+                      <option [ngValue]="undefined">---Seleccionar una fecha-----</option>
+                      <option *ngFor="let fs of fechaSubasta" [ngValue]="fs">{{fs.fecha}}</option>
+                    </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <select class="form-control " [(ngModel)]="subasta.horaSubasta" name="hora" required #hr="ngModel" [ngClass]="{ 'is-invalid': hr.invalid,'is-valid': hr.valid}">
+                      <option [ngValue]="undefined">---Seleccionar hora-----</option>
+                      <option *ngFor="let horaSubasta of arrHoraSubasta" [ngValue]="horaSubasta">{{horaSubasta.horaInicio}} a {{horaSubasta.horaFin}} </option>
+                    </select>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <select class="form-control " [(ngModel)]="subasta.tiempoSubasta" name="tiempo" required #tmp="ngModel" [ngClass]="{ 'is-invalid': tmp.invalid,'is-valid': tmp.valid}">
+                      <option [ngValue]="undefined">---Seleccionar tiempo-----</option>
+                      <option *ngFor="let tiempoSubasta of arrTiempoSubasta" [ngValue]="tiempoSubasta">{{tiempoSubasta.tiempo}}</option>
+                    </select>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary btn-block" [disabled]="!subastaForm.valid || loading">
+                        <i [ngClass]="{'fa-save':!loading, 'fa-sync fa-spin':loading}" class="fas"></i>
+                        <span *ngIf="!loading"> Registrar subasta</span>
+                        <span *ngIf="loading"> Registrando......</span>
+                       </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="col"></div>
+</div>

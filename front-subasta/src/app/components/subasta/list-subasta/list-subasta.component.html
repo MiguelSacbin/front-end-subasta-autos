@@ -1,0 +1,35 @@
+<h1>Subastas creadas</h1>
+
+
+
+<div class="card">
+    <div class="card-header">
+        <button class="btn btn-outline-info float-lg-right" routerLink="/form-subasta">Crear nueva subasta</button>
+    </div>
+    <div class="card-body">
+
+
+        <table class="table table-striped table-sm">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Hora inicio</th>
+                    <th scope="col">Hora fin</th>
+                    <th scope="col">Tiempo por venta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let subasta of subastas">
+                    <th scope="row">{{subasta.id}}</th>
+                    <td>{{subasta.fechaSubasta.fecha |date}}</td>
+                    <td>{{subasta.horaSubasta.horaInicio}}</td>
+                    <td>{{subasta.horaSubasta.horaFin}}</td>
+                    <td>{{subasta.tiempoSubasta.tiempo}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
